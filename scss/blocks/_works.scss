@@ -1,0 +1,122 @@
+.works {
+    background-image: url("/img/doodle\ items.png");
+    &__wrapper {
+        padding: 179px 117px 149px 117px;
+        @include desktop-small {
+            padding: 120px 60px 120px 60px;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+        @include tablet-small {
+            grid-template-columns: 1fr;
+            gap: 36px;
+        }
+        @include mobile {
+            padding: 50px 40px 50px 40px;
+        }
+    }
+    &__title {
+        position: relative;
+        @include text($font, 700, 64px, 96px, $color-white);
+        span {
+            @include text($font, 700, 64px, 96px, $color-primary);
+        }
+        margin-bottom: 48px;
+        @include mobile {
+            @include text($font, 700, 40px, 60px, $color-white);
+            span {
+                @include text($font, 700, 40px, 60px, $color-primary);
+            }
+            &::before {
+                position: absolute;
+                content: '';
+                display: block;
+               
+                width: 60px;
+                height: 50px;
+                top: 13px;
+                right: 23px;
+            }
+        }
+        margin-bottom: 24px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 48px;
+        @include desktop-small {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 36px;
+        }
+        @include tablet {
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+        }
+        @include tablet-small {
+            grid-template-columns: 1fr;
+            gap: 36px;
+        }
+    }
+
+    &__item {
+
+    }
+}
+.item {
+    position: relative;
+    padding: 25px;
+    background: $color-gray-dark;
+    border-radius: 16px;
+    &:hover {
+        .item__desc, 
+        .item__btn {
+            opacity: 1;
+        }
+        .item__img {
+            z-index: -5;
+            opacity: 0.3;
+        }
+    }  
+
+    
+    &__title {
+        @include text($font, 700, 16px, 24px, $color-white);
+        margin-bottom: 7px;
+    }
+
+    &__img {
+        position: absolute;
+        max-width: 265px;
+        max-height: 158px;
+        top: 50px;
+        left: 20px;
+        border-radius: 30px;
+    }
+
+    &__desc {
+        @include text($font, 400, 14px, 21px, $color-white);
+        margin-bottom: 26px;
+        transition: $transition;
+        opacity: 0;
+    }
+
+    &__btn {
+        @include text($font, 700, 18px, 27px, $color-white);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+        border-radius: 24px;
+        background: $color-primary;
+        padding: 10px 32px;
+        border: 0;
+        outline: 0;
+        display: inline-block;
+        cursor: pointer;
+        transition: $transition;
+        opacity: 0;
+        &:hover {
+            background: $color-gray-dark;
+            outline: 1px solid $color-primary;
+            @include text($font, 700, 18px, 27px, $color-primary);
+        }
+    }
+}

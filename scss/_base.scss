@@ -1,0 +1,52 @@
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    
+    font-family: $font;
+    background: $color-background;
+    color: $color-white;
+}
+
+.wrapper {
+    max-width: 1440px;
+     margin: 0 auto;
+     overflow-x: hidden;
+     
+}
+
+html,body {
+    &._overflow {
+        overflow: hidden;
+    }
+}
+
+a {
+    color: $color-white;
+    text-decoration: none;
+}
+
+
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 1180px;
+    padding:0 20px;
+    width: 100%;
+    margin: 0 auto;
+} 
+
+hr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}

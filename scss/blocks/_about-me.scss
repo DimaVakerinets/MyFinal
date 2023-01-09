@@ -1,0 +1,107 @@
+.about-me {
+ 
+ position: relative;
+ 
+ 
+ 
+ 
+ 
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include desktop-small {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+    }
+
+    &__info {
+        @include desktop-small {
+            text-align: center;
+        }
+        
+    }
+
+    &__title {
+        @include text ($font,700,64px,96px,$color-white );
+        span {
+            color:$color-primary;
+        }
+
+       
+        
+        @include desktop-small {
+            font-size: 100px;
+            padding-top: 0;
+            
+        }
+    }
+
+    &__desc {
+        @include text ($font,400,18px,27px,$color-desc );
+        max-width: 389px;
+        @include desktop-small {
+            max-width: none;
+        }
+    }
+
+    &__foto {
+        
+        background-image: url("/img/doodle\ items.png");
+       padding:50px 70px;
+       padding-left: 100px;
+       @include desktop-small {
+        padding: 50px 70px;
+       }
+        
+    }
+
+    &__img {
+        position: relative;
+        border-radius: 50%;
+        max-width: 460px;
+         border:5px solid rgba(76, 223, 243, 0.8);
+        @include mobile {
+            max-width: 350px;
+        }
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #caa462 0%, #0ac752 100%);
+            z-index: 0;
+            @include mobile {
+                 display: none;
+            }
+        }
+        &::before {
+            width: 342px;
+            height: 342px;
+            top: -60px;
+            right: -36px;
+        }
+        &::after {
+            width: 209px;
+            height: 209px;
+            left: 27px;
+            bottom: -40px;
+
+        }
+        img {
+            position: relative;
+            border-radius: 50%;
+            z-index: 1;
+
+        }
+
+       
+    }
+
+   
+}
+
+

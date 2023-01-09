@@ -1,0 +1,184 @@
+.main-screen {
+    
+position: relative;
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 100px;
+        @include desktop-small {
+            flex-direction: column;
+            align-items: center;
+         }
+    
+       
+    }
+    
+
+    &__info {
+        
+    }
+
+    &__title {
+        
+        @include text ($font,700,96px,96px,$color-white );
+       
+        span {
+            display: flex;
+            color: $color-primary;
+        }
+            @include desktop-small {
+                font-size: 120px;
+                line-height: 120px;
+
+            }
+
+
+            @include tablet-small {
+                text-align: center;
+                font-size: 75px;
+                line-height: 75px;
+                span {
+                    text-align: center;
+                }
+            }
+            @include mobile {
+              
+                font-size: 50px;
+                line-height: 50px;
+                
+                span {
+                    display: flex;
+                    align-content: center;
+                    justify-content: space-around;
+                   
+                }
+            }
+    }
+
+
+    &__avatar {
+        
+        padding-left: 50px;
+        @include desktop-small {
+           
+        }
+        
+    }
+
+   
+   
+
+    
+}
+.main-screen {
+    
+    &__btn {
+        display: flex;
+        gap: 24px;
+        padding: 0 80px ; 
+        @include desktop-small {
+            align-items: center;
+        }
+
+    }
+}
+.btn {
+    
+    &__primary {
+        @include text ($font,700,18px,27px,$color-white );
+        position: relative;
+        padding: 20px 32px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(11, 92, 139, 0.5);
+       
+        transition: 1s;
+        overflow: hidden;
+        text-decoration: none;
+        &:hover {
+            background: var(--clr);
+            box-shadow: 0 0 10px var(--clr),
+                        0 0 30px var(--clr),
+                        0 0 60px var(--clr),
+                        0 0 100px var(--clr);
+                       
+                        }
+                        
+                            &::before {
+                                content: "Hire me";
+                                position: absolute;
+                                width: 40px;
+                                height: 400%;
+                                background:$color-primary;
+                                transition: 1s;
+                                animation: animate 2s linear infinite;
+                                animation-delay: calc(0.33s * var(--i));
+                            }
+                            
+                            &:hover::before {
+                                width: 120%;
+                            }
+                            
+                            @keyframes animate {
+                                0% {
+                                    transform: rotate(0deg);
+                                }
+                                100% {
+                                    transform: rotate(360deg);
+                                }
+                            }
+                            
+                            &::after {
+                                content: "Hire me";
+                                padding: 10px 32px;
+                                position: absolute;
+                                background:$color-gray-dark;
+                                
+                                transition: 0.5s;
+                            }
+                            
+                            &:hover::after {
+                                background: var(--clr);
+                            }
+                            
+                             span {
+                                position: relative;
+                                z-index: 1;
+                                font-size: 2em;
+                                color: #fff;
+                                opacity: 0.8;
+                                text-transform: uppercase;
+                                letter-spacing: 4px;
+                                transition: 0.5s;
+                            }
+                            
+                            &:hover span {
+                                opacity: 1;
+                                color: $color-white;
+                            }             
+            
+          
+
+       
+    }
+
+    &__secondary {
+        @include text ($font,700,18px,27px,$color-white );
+        border-radius: 24px;
+        background: $color-gray-dark;
+        padding: 10px 32px;
+        align-items: center;
+        display: flex;
+        transition: $transition;
+        &:hover {
+            background: $color-primary;
+        }
+    }
+    
+        
+    
+}   
+
